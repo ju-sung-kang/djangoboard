@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <a href="/board/main/">main</a>
+        <span>&nbsp;|&nbsp;</span>
+        <a href="/board/write/">write</a>
+    </div>
+    <div>
+        {% if post_list %}
+        <ul>
+            {% for post in post_list %}
+            <li>
+                <a href="/board/detail/{{ post.id }}/">{{ post.title }}</a>
+                <span>{{ post.date }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>작성글이 없습니다.</p>
+        {% endif %}
+    </div>
+</body>
+
+</html>
